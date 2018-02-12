@@ -49,7 +49,7 @@ def logout():
     return render_template('message.html', message='You were logged out')
 
 @app.route()#the route should match the callback URL registered with the OAuth provider
-def authorized('login/authorized'):
+def authorized():
     resp = github.authorized_response()
     if resp is None:
         session.clear()
