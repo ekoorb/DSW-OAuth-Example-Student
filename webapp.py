@@ -39,6 +39,7 @@ def inject_logged_in():
 def home():
     return render_template('home.html')
 #redirect to  githubs Oauth page and confirm the callback URL
+
 @app.route('/login')
 def login():   
     return github.authorize(callback=url_for('authorized', _external=True, _scheme='https'))
